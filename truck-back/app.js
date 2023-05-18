@@ -8,11 +8,12 @@ const port = 9000;
 require('dotenv').config();
 
 const db = mysql.createPool({
-    host: process.env.DB_HOST_NAME,
-    user: process.env.DB_USER_NAME,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
-    database: process.env.DB_NAME
+    url: process.env.MYSQL_URL,
+    database: process.env.MYSQLDATABASE,
+    host: process.env.MYSQLHOST,
+    password: process.env.MYSQLPASSWORD,
+    port: process.env.MYSQLPORT,
+    user: process.env.MYSQLUSER
 });
 
 app.use(cors());
